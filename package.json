@@ -2,11 +2,12 @@
   "name": "angular-browserify-kit",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify src/index.js -o public/bundle.js",
-    "watchify": "watchify src/index.js -o public/bundle.js -v"
+    "build": "browserify src/app.js --outfile public/bundle.js --verbose --debug",
+    "watchify": "watchify src/app.js --outfile public/bundle.js --verbose --debug",
+    "jshint": "clear && jshint --exclude ./node_modules --reporter=node_modules/jshint-stylish src/**/*.js || true",
+    "jshint-watch": "watch 'npm run jshint' src"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
   "dependencies": {
     "angular": "^1.4.8",
     "browserify": "^12.0.1",
+    "watch": "^0.17.1",
     "watchify": "^3.6.1"
   }
 }

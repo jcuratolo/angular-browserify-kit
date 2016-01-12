@@ -1,4 +1,6 @@
-var app = require('../app.js');
-var Ctrl = require('./ctrl.js');
+var angular = require('angular');
+var Ctrl1 = require('./ctrl1.js');
+var Ctrl2 = require('./ctrl2.js');
 
-module.exports = app.controller('ctrl', Ctrl);
+angular.module('app').controller('Ctrl1', Ctrl1);
+angular.module('app').controller('Ctrl2', Ctrl2);
